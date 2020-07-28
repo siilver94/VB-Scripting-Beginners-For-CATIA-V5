@@ -102,6 +102,410 @@ msgbox Var1
 입력 창에 문자열을 입력 을 하면 입력 한 내용이 팝업 됨.
 
 
+## Variables 
+
+
+
+- 변수는 다른 시점에서 다른 값을 취할 수 있는 위임자 입니다.
+
+- 변수는 String, Integer, Boolean, decimal 과 같은 다른 타입의 값을  가질 수 있습니다.
+
+  **Notepad** 에서 
+
+  ```vbscript
+  varx = "Allen Kim"
+  msgbox varx
+  
+  varx = 12334
+  msgbox varx
+  
+  varx = 2000.2
+  msgbox varx
+  
+  varx = false
+  msgbox varx 
+  
+  ```
+
+  
+
+  를 입력 후 **.vbs** 확장자로 저장 후 실행을 시키면,
+
+  *AllenKim,   12334,  2000.2 , false*  라는 문구가 차례대로 나옵니다.
+
+  
+
+  ### Declaration of Variables
+
+  
+
+  두 개 타입의 변수 선언이 있습니다.
+
+  - **Implicit(암시적)** :  우리는 아무런 선언을 할 필요가 없습니다. **VBS**가 전부 자동으로 선언해 줍니다.
+
+  - **Explicit(명시적)** :  우리는  **Dim(Dimension) Keyword** 를 허용하여 변수를 선언해야 합니다.
+
+    ​                                 eg: Dim var1, dim vnumber
+
+  
+
+  ### Rules for declaring the variables
+
+  
+
+  - 변수의 이름은 **알파벳**으로 시작해야 합니다.
+
+  - 변수의 이름은 특수문자중 **underscore** 만 사용 가능합니다.
+
+  - **underscore** 가 맨 처음으로 오면 안됩니다.
+
+  - 변수의 이름은 255개 이상의 character를 넘어선 안됩니다.
+
+  - 변수의 이름은 **VBS** 의 **Keyword** 를 사용해선 안됩니다.
+
+    
+
+  ### Option Explicit
+
+  - 프로그램이 시작될 때 모든 변수가 선언되도록 하는 명령문입니다.
+  - 선언되지 않은 모든 변수를 수집하여 오류를 표시합니다.
+
+  ```vbscript
+  option  explicit
+  
+  dim a, b, c
+  
+  
+  
+  a = int(inputbox ("enter the value of a"))
+  
+  b = int(inputbox ("enter the value of b"))
+  
+  
+  
+  c= a+b
+  
+  
+  
+  msgbox " the sum of a and b is " &c`
+  ```
+
+  
+
+  ## Data Types
+
+  - 데이터 타입은 변수가 가질 수 있는 변수의 타입을 의미합니다.
+  - **VBS**에서 사용할 수 있는 유일한 데이터 타입은 **variant** 입니다.
+  - **variant** 는 많은 서브타입과 배열을 가집니다.
+
+  ```vbscript
+  a = " Carlos"
+  msgbox typename(a)
+  
+  b = 200
+  msgbox typename(b)
+  
+  c=100.01
+  msgbox typename(c)
+  
+  d = true
+  msgbox typename(d)
+  ```
+
+  *String, Integer, Double, Boolean*
+
+  
+
+  ### List of subtype
+
+  
+
+  1. **Empty**
+
+  2. **Integer**
+
+  3. **Long**
+
+  4. **Double**
+
+  5. **String**
+
+  6. **Boolean**
+  7. **Date**
+
+  8. **Array**
+
+  9. **Object**
+
+  
+
+  ##### 1. Empty
+
+  아무런 값도 선언되지 않은 변수는 **Empty** 타입니다.
+
+  
+
+  ##### 2. Integer
+
+  만약 변수가 -32768 ~ 32767  까지의 정수 이면, 데이터 타입은 **Integer** 입니다
+
+  
+
+  ##### 3. Long
+
+  만약 변수가 **Integer** 변수의 한계 값 보다 높으면 **Long** 데이터 타입을 가집니다.
+
+  
+
+  ##### 4. Double
+
+  **Floating point** 값을 저장합니다.
+
+  
+
+  ##### 5. String
+
+  **쌍따옴표** 로 묶인 데이터들은 전부 문자열 입니다.
+
+  **Inputbox** 를 통해 허용되는 모든 데이터는 항상 문자열 입니다.
+
+  
+
+  ##### 6. Boolean
+
+  변수가 **true**  나 **false** 를 포함하면 데이터 타입은 **Boolean** 입니다.
+
+  
+
+  ##### 7. Date
+
+  만약 날짜를 표시해야 된다면,  **# #** 사이에 포함 시켜야 합니다.
+
+  
+
+  ##### 8. Array
+
+  이것은 하나 이상의 값을 저장하는 특별한 **subtype** 입니다.
+
+  배열값은  **Index** 또는 **Subscripts(아래첨자)** 를 사용하여 액세스 할 수 있습니다.
+
+  배열의 사용은 프로그램에서 사용되어지는 변수의 숫자를 줄일 수 있습니다.
+
+  
+
+  
+
+  ### Exercise Scripts 
+
+  - Write a script to calculate simple interest, the inputs should be  
+
+    P as principle
+
+    R as Rate of interest
+
+    T as time in years
+
+  ``` vbscript
+  dim p, r, t 
+  
+  p = cint(inputbox("Enter the value of Principle amount"))
+  r = cint(inputbox("Enter the value of rate of interest"))
+  t = cint(inputbox("Enter the value of numver of years"))
+  
+  si = (p* r* t)/100
+  
+  msgbox " The simple interest value is " &si
+  
+  ```
+
+  
+
+  
+
+  ## Operators
+
+  1. **Arithmetic Operator**
+  2. **Comparison Operator**
+  3. **Logical Operator**
+  4. **Relational Operator**
+  5. **Concatenation Operator**
+
+  
+
+  ##### 1. Arithmetic Operator
+
+  **Arithmetic Operator** 는 가산, 감산을 위하여 쓰인다. 그러므로 이 **Operator**는 plus, minus, divide, multiply, modulus 등이 있다.
+
+  
+
+  ##### **2. Comparison Operator**
+
+  **Comparison Operators** 는=, <, >, <> 등이 있습니다.
+
+  
+
+  ##### 3. Logical Operator
+
+  이 **Operator**는 AND, OR, NOT, NOT of OR, NOT of AND, XOR 등이 있습니다.
+
+  
+
+  ##### 5. Concatenate Operator
+
+  **Concatenate Operator**는 숫자와 문자열로 사용될 수 있습니다. **&** 기호로 문자나 문자열을 연결할 수 있습니다.
+
+  
+
+  ### Order of execution of operators
+
+  1. **Exponent**
+  2. **Multiplication**
+  3. **Division**
+  4. **Mod**
+  5. **+**
+  6. **-**
+
+  
+
+  
+
+  ## Control Statement
+
+  
+
+  ### Simple If Statements
+
+  ```vbscript
+  a = cint(inputbox ("Enter the value of a"))
+  b = cint(inputbox ("Enter the value of b"))
+  
+  if (a>b) then
+  msgbox a & " is greater"
+  else
+  msgbox b & " is greater"
+  end if
+  ```
+
+  
+
+  아래 코드같이 한문장으로 **If 조건문** 을 끝낼 수 있고, 이 때 **end if** 는 필요가 없습니다.
+
+  ```vbscript
+  if (a>b) then msgbox " a is greater"
+  
+  if (a<b) then msgbox " b is greater"
+  ```
+
+  
+
+  ### Nested If Statements
+
+  **If**문 안의 다른 **If**문 입니다.  한 줄로 조건문을 끝내지 않는 한, **end if** 를 써서 **if** 조건문을 끝내야 합니다.
+
+  
+
+  ```vbscript
+  'Write a program to find the greater number among the given three numbers using nested if
+  
+  a = cint(inputbox ("Enter the value of a"))
+  b = cint(inputbox ("Enter the value of b"))
+  c = cint(inputbox ("Enter the value of c"))
+  
+  if (a > b) then
+  	if (a > c) then
+  	msgbox "A is greater"
+  	else
+  	msgbox "C is greater"
+   	end if
+  end if
+  
+  if (b > a) then
+  	if (b > c) then
+  	msgbox " B is greater"
+  	else
+  	msgbox " C is greater"
+  	end if
+  end if
+  ```
+
+  
+
+  ### Select Case Statements
+
+  사용자가 값에 따라 명령문 그룹을 실행 하려는 경우 사용합니다. 다른 언어의 **Switch case** 문과 동일합니다.
+
+  1. **Select Case Statement** 는 사용자로부터 직접 입력으로 사용되고 프로그램을 **case** 로 실행합니다.
+  2. 이것을 사용 하면 긴급하게 **debug**를 할 때 코드를 좀 더 이해하기 쉽게 합니다.
+  3. **'Select case'** 가 키워드 이고 **'end select'** 로 끝냅니다.
+  4. 관계 프로그램을 선택하기 좋습니다.
+  5. 어느 프로그램 에서든 **Select Case Statement** 을 사용할 수 있습니다. **If**문을 사용하여 작성할 수도 있습니다. 하지만 그 반대의 경우가 항상 맞는 것은 아닙니다.
+
+  
+
+  *예시 :  거래 수단 선택.*
+
+  ```vbscript
+  varchoice = inputbox ("Enter your choice a: Card b: cash c: cheque d: DD")
+  
+  select case varchoice
+  	case "a"
+  	msgbox "Card Option is chosen"
+  
+  	case "b"
+  	msgbox "Cash Option is chosen"
+  
+  	case "c"
+  	msgbox "Cheque Option is chosen"
+  
+  	case "d"
+  	msgbox "DD Option is chosen"
+  	
+  	case else 
+  msgbox " You have entered an invalid option"
+  
+  end select
+  ```
+
+
+
+*예제: 전자 계산기.*
+
+```vbscript
+varchoice = lcase(inputbox ("Enter your choice of operator :"&vbnewline& " a->addition s->subtraction m->multiplication d->division i->integer division e->exponential mod->modulus"))
+
+var1 = cdbl (inputbox("Enter the first value"))
+var2 = cdbl(inputbox("Enter the second value"))
+
+select case varchoice
+
+	case "a"
+	msgbox (var1+var2)
+
+	case "s"
+	msgbox (var1-var2)
+
+	case "m"
+	msgbox (var1/var2)
+
+	case "d"
+	msgbox (var1/var2)
+
+	case "i"
+	msgbox (var1\var2)
+
+	case "e"
+	msgbox (var1 ^ var2)
+
+	case "mod"
+	msgbox (var1 mod var2)
+
+	case else
+	msgbox "You have entered the wrong operator"
+
+    
+end select
+```
+
 
 
 
