@@ -1,10 +1,12 @@
 # VB Scripting Beginner's Basics for CATIA V5
 
+<code><img height = "200"
+src = https://github.com/siilver94/vb-scripting-beginner-s-for-CATIA-v5/assets/57824945/cedc8511-4ebc-43e9-a8d1-8e665ce97bc1></code>
 
 
 ## Programming Language vs Scripting Language
 
-
+<br/>
 
 ### Programming language
 
@@ -20,10 +22,7 @@
 
 - 스크립팅 언어 보다 많은 기능이 있습니다. (ex: C, C++, JAVA, .NET)
 
-
-
-
-
+<br/>
 
 ### Scripting language 
 
@@ -43,8 +42,7 @@
 
 - **이해하기 쉽고 구현하기가 매우 쉽습니다.**(ex: Java script, VB Script, Shell Script)
 
-   
-
+<br/>
 
 ##  VB 스립팅에 대해서 
 
@@ -60,13 +58,10 @@
 
 - **VB Script**는 **.vbs** 파일 확장자를 가지고 있습니다.
 
+<br/>
   
+## Message Box
 
-  
-
-  ## Message Box
-
-  
 
   그래픽 사용자 인터페이스에서 대화 상자는 사용자에게 정보를 보여 주거나 응답을 받는 사용자 인터페이스에서 사용되는 특별한 창이다. 대화 상자라고 부르는 까닭은 컴퓨터와 사용자 사이에 대화할 수 있는 기능을 제공하기 때문이다. 
 
@@ -80,7 +75,7 @@
 
   라는 구문 입력 후 file extension 을 **.vbs** 로 저장하면  **vbs** 파일이 생성됨.
 
-
+<br/>
 
 
 ## Inputbox:
@@ -101,6 +96,7 @@ msgbox Var1
 
 입력 창에 문자열을 입력 을 하면 입력 한 내용이 팝업 됨.
 
+<br/>
 
 ## Variables 
 
